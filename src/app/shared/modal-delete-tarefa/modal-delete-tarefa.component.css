@@ -1,0 +1,47 @@
+.modal-content {
+  background-color: #BFB4B4;
+  color: #011526;
+}
+
+p {
+  font-size: 18px;
+}
+
+fa-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.botao {
+  background-color: #88847F;
+  color: #011526;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.botao:hover {
+  background-color: #011526;
+  color: #F2F0F0;
+}
+
+.botaoModalEscuro {
+  background-color: #011526;
+  color: #F2F0F0;
+  letter-spacing: 2px;
+}
+
+.botaoModalEscuro:hover {
+  background-color: #88847F;
+  color: #F2F0F0;
+}
+
+.botaoModalClaro {
+  background-color: #F2F0F0;
+  color: #011526;
+  letter-spacing: 2px;
+}
+
+.botaoModalClaro:hover {
+  background-color: #88847F;
+  color: #F2F0F0;
+}

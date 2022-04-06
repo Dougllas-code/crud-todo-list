@@ -1,0 +1,36 @@
+.cardTarefa {
+  background-color: #F2F0F0;
+  padding: 15px;
+}
+
+.cardTarefa h5 {
+  font-size: 22px;
+  font-weight: 550;
+  letter-spacing: 1px;
+}
+
+fa-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.iconEdit:hover {
+  color: #92DEE2;
+}
+
+.iconTrash:hover {
+  color: #E2A192;
+}
+
+.descricaoTarefa {
+  color: #61686A;
+}
+
+.botao {
+  background-color: #011526;
+  color: #F2F0F0;
+}
+
+.botao:hover {
+  background-color: #88847F;
+}
