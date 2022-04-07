@@ -15,19 +15,19 @@
 
         <div class="mb-3 text-start">
           <label class="form-label">Titulo</label>
-          <input type="text" class="form-control">
+          <input type="text" [(ngModel)]="titulo" class="form-control">
         </div>
 
         <div class="mb-3 text-start">
           <label class="form-label">Descrição</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" [(ngModel)]="descricao" rows="3"></textarea>
         </div>
 
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn botaoModalClaro" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn botaoModalEscuro">Salvar</button>
+        <button type="button" class="btn botaoModalEscuro" (click)="adicionarTarefa()" data-bs-dismiss="modal">Salvar</button>
       </div>
 
     </div>

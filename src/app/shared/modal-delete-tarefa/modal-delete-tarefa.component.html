@@ -1,5 +1,3 @@
-<fa-icon [icon]="faTrash" data-bs-toggle="modal" data-bs-target="#modalExcluirTarefa"></fa-icon>
-
 <div class="modal fade mt-5" id="modalExcluirTarefa" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -10,12 +8,13 @@
       </div>
 
       <div class="modal-body text-start">
-        <p>Deseja mesmo excluir a tarefa: <strong>Estudar Angular</strong>?</p>
+        <p>Deseja mesmo excluir a tarefa: <strong>{{titulo}}</strong>?</p>
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn botaoModalClaro" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn botaoModalEscuro">Excluir</button>
+        <button type="button" class="btn botaoModalEscuro" data-bs-dismiss="modal"
+          (click)="excluirTarefa()">Excluir</button>
       </div>
 
     </div>

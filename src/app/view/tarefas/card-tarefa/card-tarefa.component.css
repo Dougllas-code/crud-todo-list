@@ -1,12 +1,16 @@
 .cardTarefa {
   background-color: #F2F0F0;
-  padding: 15px;
+  min-height: 145px;
 }
 
 .cardTarefa h5 {
   font-size: 22px;
   font-weight: 550;
   letter-spacing: 1px;
+}
+
+.concluida {
+  background-color: #92E2B2;
 }
 
 fa-icon {
@@ -24,6 +28,8 @@ fa-icon {
 
 .descricaoTarefa {
   color: #61686A;
+  width: 400px;
+  word-wrap: break-word;
 }
 
 .botao {
@@ -33,4 +39,12 @@ fa-icon {
 
 .botao:hover {
   background-color: #88847F;
+}
+
+#selectStatusTarefas {
+  background-color: #BFB4B4;
+  color: #011526;
+  font-size: 18px;
+  font-weight: 550;
+  letter-spacing: 1px;
 }

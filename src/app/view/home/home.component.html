@@ -7,10 +7,16 @@
     </div>
 
     <div class="col-sm-9 text-end">
-      <app-modal-add-tarefa></app-modal-add-tarefa>
+      <app-modal-add-tarefa (novaTarefa)="salvarTarefa($event)"></app-modal-add-tarefa>
     </div>
   </div>
   
 </section>
 
-<app-tarefas></app-tarefas>
+<app-card-tarefa 
+  [tarefas]="tarefas" 
+  (tarefaAlterada)="editartarefa($event)" 
+  (exclusaoTarefaConfirmada)="excluirTarefa($event)"
+  (tarefaConcluida)="concluirTarefa($event)"
+  (selecionarStatus)="buscarPorStatus($event)">
+</app-card-tarefa>

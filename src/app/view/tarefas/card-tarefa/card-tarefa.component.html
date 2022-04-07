@@ -1,34 +1,55 @@
-<div class="row mx-1 mt-4">
+<section class="container p-0">
+  <div class="my-4 col-2">
 
-  <div class="col-sm-4 cardTarefa rounded">
-    
-    <div class="row p-2">
-      <div class="col-9">
-        <h5>Estudar Angular</h5>
+    <select class="form-select" id="selectStatusTarefas" (change)="buscarPorStatus($event)">
+      <option selected hidden>Status Tarefa</option>
+      <option value="TODAS">Todas</option>
+      <option value="PENDENTES">Pendentes</option>
+      <option value="CONCLUIDAS">Concluídas</option>
+    </select>
+
+  </div>
+
+  <div class="row mt-4">
+
+    <div class="col-sm-4" *ngFor="let tarefa of tarefas, let i = index">
+
+      <div class="col-12 cardTarefa rounded p-2 me-1 my-2" [ngClass]="tarefa.done == true ? 'concluida' : ''">
+        <div class="row p-2">
+          <div class="col-9">
+            <h5>{{tarefa.titulo}}</h5>
+          </div>
+
+          <div class="col-3 text-end">
+            <span class="me-1 iconEdit" [style]="tarefa.done == true ? 'display: none' : ''">
+              <fa-icon [icon]="faEdit" data-bs-toggle="modal" (click)="definirDadoTarefa(tarefa)"
+                data-bs-target="#modalEditarTarefa"></fa-icon>
+            </span>
+            <span class="ms-2 iconTrash">
+              <fa-icon [icon]="faTrash" data-bs-toggle="modal" (click)="definirDadoTarefa(tarefa)"
+                data-bs-target="#modalExcluirTarefa"></fa-icon>
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12 px-2 descricaoTarefa">
+          {{tarefa.descricao}}
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-end">
+            <button type="button" class="btn botao py-0" [style]="tarefa.done == true ? 'display: none' : ''"
+              (click)="concluirTarefa(tarefa.id)">Concluir</button>
+          </div>
+        </div>
       </div>
 
-      <div class="col-3 text-end">
-        <span class="me-1 iconEdit">
-          <app-modal-edit-tarefa></app-modal-edit-tarefa>
-        </span>
-        <span class="ms-2 iconTrash">
-          <app-modal-delete-tarefa></app-modal-delete-tarefa>
-        </span>
-      </div>
-    </div>
-
-    <div class="row mx-2">
-      <p class="descricaoTarefa mb-0">
-        Estudar estrutura de projeto em angular, data binding, ciclo de eventos e requisições com a biblioteca Http
-      </p>
-    </div>
-
-    <div class="row">
-      <div class="col-12 text-end">
-        <button type="button" class="btn botao py-0">Concluir</button>
-      </div>
     </div>
 
   </div>
 
-</div>
+  <app-modal-edit-tarefa [id]="id" [titulo]="titulo" [descricao]="descricao"
+    (tarefaAlterada)="tarefaAtualizada($event)"></app-modal-edit-tarefa>
+  <app-modal-delete-tarefa [id]="id" [titulo]="titulo" (exclusaoConfirmada)="excluirTarefa($event)">
+  </app-modal-delete-tarefa>
+</section>

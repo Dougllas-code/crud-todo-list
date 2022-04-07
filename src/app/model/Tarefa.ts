@@ -1,17 +1,13 @@
 export class Tarefa {
+  id?: number
   titulo: string
   descricao: string
-  status: StatusTarefa
+  done: Boolean
 
-  constructor(titulo: string, descricao: string){
+  constructor(titulo: string, descricao: string, id: number){
+    this.id = id
     this.titulo = titulo
     this.descricao = descricao
-    this.status = StatusTarefa.PENDENTE
+    this.done = false
   }
-}
-
-export enum StatusTarefa {
-  'CONCLUIDA',
-  'CANCELADA',
-  'PENDENTE'
 }
